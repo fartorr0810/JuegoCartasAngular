@@ -10,13 +10,7 @@ import { CartaServicioService } from './game/services/carta-servicio.service';
 })
 export class AppComponent implements OnInit {
 //Aqui irian las id imagen
-  cardImages = [
-    'pDGNBK9A0sk',
-    'fYDrhbVlV1E',
-    'qoXgaF27zBc',
-    'b9drVB7xIOI',
-    'TQ-q5WAVHj0'
-  ];
+  cardImages:string []= [];
 
   cards: CardData[] = [];
 
@@ -31,8 +25,7 @@ export class AppComponent implements OnInit {
   }
   cartasnuevas: CartaPokemon[]=[];
   constructor(private dialog: MatDialog,private serviciocartas:CartaServicioService) {
-    this.serviciocartas.obtenerCartas;
-
+    this.cardImages=this.serviciocartas.obtenerCartas();
   }
 
   ngOnInit(): void {

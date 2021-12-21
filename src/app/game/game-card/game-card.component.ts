@@ -1,6 +1,7 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CardData } from '../../interfaces/card.interface';
+import { CartaServicioService } from '../services/carta-servicio.service';
 
 @Component({
   selector: 'app-game-card',
@@ -36,11 +37,17 @@ export class GameCardComponent implements OnInit {
   @Input()
   data!: CardData;
 
+  links:string[]=[];
+
   @Output() cardClicked = new EventEmitter();
 
-  constructor() { }
+  constructor(private servicio:CartaServicioService) {
+    this.links=this.servicio.obtenerCartas();
+    console.log(this.links);
+  }
 
   ngOnInit(): void {
+
   }
 
 }

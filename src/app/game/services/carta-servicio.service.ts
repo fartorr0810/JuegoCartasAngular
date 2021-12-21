@@ -11,13 +11,13 @@ export class CartaServicioService {
   links:string []= [];
   constructor(private http:HttpClient) {
   }
-  obtenerCartas(): Pokemon[]{
+  obtenerCartas(): string[]{
     this.http.get<Pokemon>(this.url).subscribe(datos=>{
       for (let index = 0; index < datos.data.length; index++) {
         this.cartasPokemon.push(datos);
         this.links.push(datos.data[index].images.large);
       }
     });
-    return this.cartasPokemon;
+    return this.links;
   }
 }
