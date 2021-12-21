@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CardData } from './interfaces/card.interface';
+import { CardData, CartaPokemon } from './interfaces/card.interface';
 import { RestartDialogComponent } from './game/restart-dialog/restart-dialog.component';
-
+import { CartaServicioService } from './game/services/carta-servicio.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+//Aqui irian las id imagen
   cardImages = [
     'pDGNBK9A0sk',
     'fYDrhbVlV1E',
@@ -29,8 +29,9 @@ export class AppComponent implements OnInit {
       .sort((a, b) => a[0] - b[0])
       .map(a => a[1]);
   }
-
-  constructor(private dialog: MatDialog) {
+  cartasnuevas: CartaPokemon[]=[];
+  constructor(private dialog: MatDialog,private serviciocartas:CartaServicioService) {
+    this.serviciocartas.obtenerCartas;
 
   }
 

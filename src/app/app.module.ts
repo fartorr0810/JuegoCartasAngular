@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { GameModule } from './game/game.module';
+import { CartaServicioService } from './game/services/carta-servicio.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +18,13 @@ import { GameModule } from './game/game.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    GameModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-    GameModule
+    MatIconModule
   ],
-  providers: [],
+  providers: [CartaServicioService],
+  entryComponents:[MatDialogModule],
   bootstrap: [AppComponent]
 })
 

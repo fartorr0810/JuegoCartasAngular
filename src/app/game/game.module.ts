@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GameCardComponent } from './game-card/game-card.component';
 import {RestartDialogComponent} from './restart-dialog/restart-dialog.component'
-import {MatDialog, MatDialogContent, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     GameCardComponent,
@@ -10,10 +10,11 @@ import {MatDialog, MatDialogContent, MatDialogRef, MAT_DIALOG_DATA} from '@angul
   ],
   imports: [
     CommonModule,
-    MatDialogContent,MatDialog,MatDialogRef
+    MatDialogModule
   ],exports:[
     GameCardComponent,
-    RestartDialogComponent
-  ]
+    RestartDialogComponent,
+  ],
+
 })
 export class GameModule { }
